@@ -1,0 +1,94 @@
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <title>Available books</title>
+
+<style>
+    .form-popup {
+        display: none;
+        position: fixed;
+        bottom: 0;
+        right: 15px;
+        border: 3px solid #f1f1f1;
+        z-index: 9;
+    }
+    body{
+        background-color: ghostwhite;
+    }
+    table.table-bordered{
+        border:1px solid black;
+    }
+    table.table-bordered > thead > tr > th{
+        border:1px solid black;
+    }
+    table.table-bordered > tbody > tr > td{
+        border:1px solid black;
+    }
+
+    .heading{
+        margin-top: 30px;
+       }
+</style>
+</head>
+<body style="background-color:#FFE6E8">
+<h1><center class="heading">AVAILABLE BOOKS</center></h1>
+<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+<div class="old_ie_wrapper">
+    <form action="/filterUser">
+        <div class="m-3">
+            <label for="filter">Filter By:</label>
+            <select name="filter" id="filter">
+                <option>Choose any one</option>
+                <option value="author">Author</option>
+                <option value="bookName">BookName</option>
+                <option value="section">section</option>
+            </select>
+            <input type="text" name="word" placeholder="Enter a word">
+            <input type="submit" class="btn btn-primary btn-danger" value="Submit" >
+        </div>
+    </form>
+<table class="table table-bordered table-striped table-hover">
+    <thead class="thead-dark">
+    <tr>
+        <th>Book Code</th>
+        <th>BookName</th>
+        <th>Author</th>
+        <th>Section</th>
+        <th>Price</th>
+        <th>Available Books</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    <th:block th:each="bookValues : ${ListBooks}">
+        <form th:action="'/shopping/' + ${bookValues.bookCode}">
+    <tr>
+        <td>[[${bookValues.bookCode}]]</td>
+        <td>[[${bookValues.bookName}]]</td>
+        <td>[[${bookValues.author}]]</td>
+        <td>[[${bookValues.section}]]</td>
+        <td>[[${bookValues.price}]]</td>
+        <td>[[${bookValues.availableBooks}]]</td>
+        <td>
+            <label for="Quantity">Quantity</label><br>
+            <select name="Quantity" id="Quantity">
+                <option value=1>1</option>
+                <option value=2>2</option>
+                <option value=3>3</option>
+                <option value=4>4</option>
+                <option value=5>5</option>
+            </select>
+            <input type="submit" name="shopping" value="BuyNow" class="btn btn-primary btn-danger">
+            <input type="submit" name="shopping" value="addToCart" class="btn btn-primary btn-danger" >
+
+        </form>
+        </td>
+    </tr>
+    </th:block>
+    </tbody>
+</table>
+    <center><a class="btn btn-primary btn-danger" th:href="@{'/cart'}">Proceed to cart</a></center>
+<!--</form>-->
+</div>
+</body>
+</html>

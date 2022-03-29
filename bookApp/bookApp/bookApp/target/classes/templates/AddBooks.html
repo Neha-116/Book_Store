@@ -1,0 +1,50 @@
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <title>Add Books</title>
+    <style>
+        body{
+            background-image: url("addbook.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .heading{
+            margin-top:60px;
+        }
+
+
+
+    </style>
+</head>
+<h1><center class="heading">TABLE DETAILS</center></h1>
+<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+<div class="old_ie_wrapper">
+
+        <form action="/addBooksValues" method="post">
+            <table class="table table-bordered">
+                <thead class="thead-dark">
+                <tr>
+                    <th>Book Code</th>
+                    <th>BookName</th>
+                    <th>Author</th>
+                    <th>Section</th>
+                    <th>Price</th>
+                    <th>Available Books</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th><input type="text" name="bookCode"></th>
+                    <th><input type="text" name="bookName"></th>
+                    <th><input type="text" name="author"></th>
+                    <th><input type="text" name="section"></th>
+                    <th><input type="text" name="price"></th>
+                    <th><input type="text" name="availableBooks"></th>
+                </tr>
+                </tbody>
+            </table>
+            <center><input class="btn btn-primary btn-danger" type="submit"></center>
+        </form>
+
+</div>
+</html>

@@ -1,0 +1,57 @@
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+          integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+
+    <title>Booking Confirmed</title>
+</head>
+<style>
+    td {
+        padding: 0;
+    }
+    p {
+        padding: .3rem;
+        margin: 0;
+    }
+
+</style>
+<body style="background-image: url('back1.jpg'); background-size:cover; background-color:dimgrey; font-family: Nunito, Montserrat, monaco,Consolas,Lucida Console,monospace; padding: 5rem;">
+<div  style="text-align: center; border-radius: 20px 20px; border-spacing: 0px; background-color: white; padding-top: 5%; padding-right: 5%; padding-bottom: 10%; padding-left: 5%; font-size: 25px;">
+<table class="table table-bordered table-striped table-hover" >
+    <thead class="thead-dark">
+    <tr align="center"><img height="80"
+             src="https://cms-assets.tutsplus.com/uploads/users/523/posts/32694/final_image/tutorial-preview-large.png"
+             alt="tick icon"></tr>
+    <tr><h2><b>Order Confirmed</b></h2></tr>
+    <tr>
+        <th>BookName</th>
+        <th>Author</th>
+        <th>Section</th>
+        <th>Price</th>
+        <th>Quantity</th>
+    </tr>
+    </thead>
+    <tbody>
+    <th:block th:each="ListCart: ${ListCart}">
+        <tr>
+            <td><h4>[[${ListCart.bookName}]]</h4></td>
+            <td><h4>[[${ListCart.author}]]</h4></td>
+            <td><h4>[[${ListCart.section}]]</h4></td>
+            <td><h4>[[${ListCart.price}]]</h4></td>
+            <td><h4>[[${ListCart.totalNumberOfBooks}]]</h4></td>
+
+        </tr>
+
+    </th:block>
+    </tbody>
+</table>
+    <button class="btn btn-primary btn-danger" onclick="window.print()">Download Receipt</button>
+</div>
+<center><a class="btn btn-primary btn-danger" th:href="@{'/confirmation'}">Proceed</a></center>
+
+</body>
+</html>
+
+
+

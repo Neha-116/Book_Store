@@ -1,0 +1,290 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
+
+
+:root{
+  --bs-indigo: #6610f2;
+  --black:#2c2c54;
+    --white: #ffffff;
+}
+
+*{
+  font-family: 'Nunito', sans-serif;
+  margin:0; padding:0;
+  box-sizing: border-box;
+  outline: none; border:none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: all .2s linear;
+}
+
+body{
+    background-color: whitesmoke;
+}
+
+
+html{
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-padding-top: 6.5rem;
+  scroll-behavior: smooth;
+}
+
+section{
+  padding:2rem 9%;
+}
+
+.hover{
+    box-shadow: 20px 40px 50px black;
+}
+.btn{
+  display: inline-block;
+  margin-top: 1rem;
+  background:red;
+  color:#fff;
+  padding:.8rem 3rem;
+  font-size: 1.7rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+.btn:hover{
+  background:var(--black);
+}
+
+
+.header-1{
+  background:#cccccc;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding:2rem 9%;
+}
+
+.logo{
+  color:var(--black);
+  font-weight: bolder;
+  font-size: 3rem;
+}
+
+.logo i{
+   align: center;
+  padding-right: .5rem;
+  color:red;
+}
+
+
+.header-2{
+  background:red;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding:2rem 9%;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+  position: relative;
+}
+
+.header-2.active{
+  position: fixed;
+  top:0; left: 0; right:0;
+  z-index: 10000;
+}
+
+.header-2 .navbar a{
+  padding:.5rem 1.5rem;
+  font-size: 2rem;
+  border-radius: .5rem;
+  color:var(--white);
+}
+
+.header-2 .navbar a:hover{
+  background:var(--bs-indigo);
+  color:#fff;
+}
+
+.header-2 .icons a{
+  font-size: 2.5rem;
+  color:var(--black);
+  padding-left: 1rem;
+}
+
+.header-2 .icons a:hover{
+  color:var(--bs-indigo);
+}
+
+#menu-bar{
+  font-size: 3rem;
+  border-radius: .5rem;
+  border:.1rem solid var(--black);
+  padding:.8rem 1.5rem;
+  color:var(--black);
+  cursor: pointer;
+  display: none;
+}
+
+
+
+.category .box-container{
+
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  padding-top: 1rem;
+}
+
+.category .box-container .box{
+  border-radius: .5rem;
+  text-align: center;
+  padding:2rem;
+  flex:1 1 25rem;
+}
+
+
+.contact form{
+  text-align: center;
+  padding:2rem;
+  border:.1rem solid rgba(0,0,0,.3);
+}
+
+.contact form .inputBox{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.contact form .inputBox input, .contact form textarea{
+  padding:1rem;
+  font-size: 1.7rem;
+  background:#f7f7f7;
+  text-transform: none;
+  margin:1rem 0;
+  border:.1rem solid rgba(0,0,0,.3);
+  width: 49%;
+}
+
+.contact form textarea{
+  height: 20rem;
+  resize: none;
+  width: 100%;
+}
+section.footer{
+    position:absolute;
+    background-color:black;
+    bottom:0;
+    width:100vw;
+}
+
+.footer .box-container{
+  display: flex;
+  gap:1.5rem;
+  flex-wrap: wrap;
+  justify-content:center;
+  align-items:center;
+}
+
+.footer .box-container .bsox{
+  padding:1rem 0;
+}
+
+.footer .box-container .box .share a{
+  padding:0;
+
+  height:3rem;
+  width:3rem;
+  line-height: 3rem;
+  text-align: center;
+}
+
+.footer .box-container .box h3{
+  font-size: 2.5rem;
+  color:var(--black);
+}
+
+.footer .box-container .box p{
+  font-size: 1.3rem;
+  color:#666;
+  padding:.7rem 0;
+}
+
+.footer .box-container .box .links{
+  padding:1rem 0;
+}
+
+.footer .box-container .box .links a{
+  display: block;
+  padding:.5rem 0;
+  font-size: 1.7rem;
+  color:#333;
+}
+
+.footer .box-container .box .links a:hover{
+  text-decoration: underline;
+  color:var(--bs-indigo);
+}
+
+.footer .credit{
+  padding:2.5rem 1rem;
+  border-top: .1rem solid rgba(0,0,0,.1);
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.footer .credit span{
+  color:var(--bs-indigo);
+}
+
+.zoom {
+      background-color: transparent;
+      transition: transform .6s; /* Animation */
+      width: 100px;
+      height: 100px;
+      margin: 0 auto;
+    }
+
+    .zoom:hover {
+          transform: scale(1.3); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+        }
+    .dot {
+      height: 10px;
+      width: 10px;
+      background-color: rgba(0,0,0,0);
+      border-radius: 0%;
+      display: inline-block;
+    }
+.zoom1
+    {
+          background-color: transparent;
+          transition: transform .7s; /* Animation */
+          width: 100px;
+          height: 100px;
+          margin: 0 auto;
+        }
+
+    .zoom1:hover {
+              transform: scale(1.3); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+              /*background-color:	#DCDCDC;*/
+            }
+    .dot1 {
+          height: 12px;
+          width: 12px;
+          background-color: rgba(0,0,0,0);
+          border-radius: 0;
+          display: inline-block;
+        }
+
+
+
+.share{
+  /*  width:15%; */
+    display:flex;
+    justify-content:center;
+    column-gap:.8rem;
+}
+
+
+
+
+
+
+
+

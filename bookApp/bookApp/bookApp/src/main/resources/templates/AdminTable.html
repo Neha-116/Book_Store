@@ -1,0 +1,91 @@
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <title>Admin Table</title>
+<style>
+    body{
+            background-image: url("bookdetails.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    .form-popup {
+        display: none;
+        position: fixed;
+        bottom: 0;
+        right: 15px;
+        border: 3px solid #f1f1f1;
+        z-index: 9;
+    }
+
+    input{
+        border-radius:10px;
+    }
+
+    .btn-danger {
+    color: #fff;
+    background-color: #dc3545;
+    border-color: black;
+    }
+
+    .btn-danger:hover {
+    color: #fff;
+    background-color: #212529;
+    border-color: #212529;
+    }
+
+    .heading{
+        margin-top:20px;
+    }
+
+</style>
+</head>
+<body>
+<h1><center class="heading">BOOK DETAILS</center></h1>
+<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+<div class="old_ie_wrapper">
+<form action="/filterAdmin">
+    <div class="m-3">
+    <label for="filter">Filter By:</label>
+    <select name="filter" id="filter">
+        <option>Choose any one</option>
+        <option value="author">Author</option>
+        <option value="bookName">BookName</option>
+        <option value="section">section</option>
+    </select>
+    <input type="text" name="word" placeholder="Enter a word">
+        <input type="submit" class="btn btn-danger" value="Submit" >
+    </div>
+</form>
+<table class="table table-bordered table-striped table-hover">
+    <thead class="thead-dark">
+    <tr>
+        <th>Book Code</th>
+        <th>BookName</th>
+        <th>Author</th>
+        <th>Section</th>
+        <th>Price</th>
+        <th>Available Books</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <th:block th:each="bookValues : ${ListBooks}">
+
+    <tr>
+        <td>[[${bookValues.bookCode}]]</td>
+        <td>[[${bookValues.bookName}]]</td>
+        <td>[[${bookValues.author}]]</td>
+        <td>[[${bookValues.section}]]</td>
+        <td>[[${bookValues.price}]]</td>
+        <td>[[${bookValues.availableBooks}]]</td>
+        <td>
+            <a class="btn btn-primary m-2" th:href="@{'/modifyBook/' + ${bookValues.bookCode}}">Modify</a>
+            <a class="btn btn-primary m-2" th:href="@{'/deleteBook/' + ${bookValues.bookCode}}">Delete</a>
+        </td>
+    </tr>
+    </th:block>
+    </tbody>
+</table>
+    <center><a class="btn btn-primary btn-danger" th:href="@{'/addBooks'}">Add Books</a></center>
+</div>
+</body>
+</html>

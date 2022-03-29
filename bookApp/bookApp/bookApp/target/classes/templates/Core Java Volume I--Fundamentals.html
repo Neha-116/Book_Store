@@ -1,0 +1,49 @@
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <link rel="stylesheet" href="bookPagesBg/books.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/fontawesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<h2 style="text-align:center">Product book</h2>
+
+<div class="book">
+    <img src="bookPagesBg/Core%20Java%20Volume%20I--Fundamentals.jpg" alt="Core Java Volume I--Fundamentals" style="width:70%">
+
+    <h1>
+        Core Java Volume I--Fundamentals
+    </h1>
+
+    <h2>
+        Master foundational techniques, idioms, and best practices for writing superior Java code
+    </h2>
+
+    <p class="price">
+        800 Rs/-
+    </p>
+
+    <table align="center">
+        <tbody>
+        <tr>
+            <td colspan="8">
+                <button>
+                    Buy now
+                </button>
+            </td>
+
+            <td colspan="2">
+                <button>
+                    Add to cart
+                </button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <center><a style="color: white" th:href="@{'/termsAndCondition'}">Terms And Condition</a></center>
+</div>
+</body>
+</html>

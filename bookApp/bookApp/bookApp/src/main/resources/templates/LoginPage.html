@@ -1,0 +1,72 @@
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+
+    <link rel="stylesheet"  href="loginRegistration/LoginPage.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+
+    <title>Login page</title>
+    <style>
+        marquee{
+        font-size: 30px;
+        font-weight: 600;
+        font-family_ sans-serif;
+        }
+        .div1{
+            width:100%;
+        }
+
+       .div1 h3{
+        color:black
+       }
+
+        .header{
+            padding-top: 10px;
+            display:flex;
+            background-color:white;
+            height:50px;
+            border-radius: 15px;
+            opacity:0.7;
+        }
+        .quote{
+            display:flex;
+            background-color:red;
+            height:110px;
+            border-radius: 15px;
+            opacity:0.7;
+        }
+        h4{
+        color:white;
+        }
+    </style>
+</head>
+<body>
+<br>
+<section class="header">
+    <marquee width="100%" direction="left" height="100px">
+        <div class="div1"> <h3>We here believe that bookstores are essential to a healthy culture</h3></div>
+    </marquee>
+</section>
+<br>
+<section class="quote">
+    <div id="a" class="div1"> <p><h4 align="center">As more and more people buy their books online</h4></p>
+        <p><h4 align="center">we wanted to create an easy, convinient way for you to get your books</h4></p></div>
+</section>
+<br>
+<div class="alert alert-danger"  align="center" role="alert" th:text="${loginFailed}" th:if="${loginFailed}"></div>
+<div class="form">
+    <form class="login-form" action="/login" method="post">
+        Username:<br>
+        <input type="text" name="username" placeholder="username">
+        Password:<br>
+        <input type="password" name="password" placeholder="password">
+        <button type="submit">Login</button>
+        <p class="message">Not registered? <a th:href="@{'/registrationPage'}">Create an account</a></p>
+    </form>
+</div>
+<script>
+    $('.message a').click(function(){
+        $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+    });
+</script>
+</body>
+</html>

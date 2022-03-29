@@ -1,0 +1,44 @@
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <title>Modify Table</title>
+    <style>
+        .heading{
+            margin-top:50px;
+        }
+    </style>
+</head>
+<body style="background-color:#ADD8E6">
+<h1><center class="heading">EDIT BOOK DETAILS</center></h1><br>
+<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+<div class="old_ie_wrapper">
+<form action="/modifyBookValues" >
+<table class="table table-bordered">
+    <thead class="thead-dark">
+    <tr>
+        <th>Book Code</th>
+        <th>BookName</th>
+        <th>Author</th>
+        <th>Section</th>
+        <th>Price</th>
+        <th>Available Books</th>
+    </tr>
+    </thead>
+    <tbody>
+    <th:block th:each="modifyBook : ${modifyBook}">
+
+    <tr>
+        <td><input type="text" name="bookCode" th:value="${modifyBook.bookCode}"></td>
+        <td><input type="text" name="bookName" th:value="${modifyBook.bookName}"></td>
+        <td><input type="text" name="author" th:value="${modifyBook.author}"></td>
+        <td><input type="text" name="section" th:value="${modifyBook.section}"></td>
+        <td><input type="text" name="price" th:value="${modifyBook.price}"></td>
+        <td><input type="text" name="availableBooks" th:value="${modifyBook.availableBooks}"></td>
+    </tr>
+    </th:block>
+    </tbody>
+</table>
+    <center><input type="submit" class="btn btn-primary btn-danger" value="Modify"></center>
+</form>
+</div>
+</body>
+</html>

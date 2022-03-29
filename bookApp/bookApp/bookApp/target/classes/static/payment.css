@@ -1,0 +1,175 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family : sans-serif;
+    align-content: center;
+}
+
+.app-container{
+    height: 700px;
+    width: 500px;
+    top: 45%;
+    left: 50%;
+    background-color:whitesmoke;
+    border-radius: 7px 5px 5px 5px;
+    box-shadow: #050505;
+    transform: translate(-50%,-50%);
+    position: absolute;
+}
+.or{
+    text-align: center;
+
+    color: black;
+    font-size:medium;
+    margin-left:40px ;
+}
+
+.top-box{
+    height: 150px;
+
+    border-bottom-left-radius: 80px;
+    border-bottom-right-radius: 80px;
+
+
+}
+.top-box{
+    text-align: center;
+    padding-top: 20px;
+    color:black;
+}
+
+.left-icon{
+    float: left;
+    margin-left: 30px;
+}
+
+.right-icon{
+    float: right;
+    margin-right: 30px;
+}
+
+.middle-box{
+    height: 50px;
+
+    margin: -70px 30px 20px;
+    text-align: center;
+    font-size: 12px;
+    border-radius: 10px;
+    color: black;
+}
+.middle-box p{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 20px;
+    font-weight:bold;
+
+
+}
+
+.middle-box h1span{
+    font-size: 20px;
+    margin-left: 5px;
+    bottom: 18px;
+    position : relative;
+}
+
+.payment-option-btn{
+    color: #fff;
+    margin-top: 4px;
+    margin-left: 120px;
+    margin-right: 1500px;
+    height: 30px;
+    width: 290px;
+    background-color:mediumpurple;
+    border: none;
+    cursor: pointer;
+}
+
+.card-details{
+    background: #fff;
+    color: #555;
+    margin: 10px 30px;
+    padding: 10px;
+}
+.card-details p{
+    font-size: 14px;
+}
+.upi-details{
+    background: #fff;
+    color: #555;
+    margin: 10px 30px;
+    padding: 10px;
+}
+.upi-details p{
+    font-size: 14px;
+}
+
+.card-details label{
+    font-size: 10px;
+    line-height: 20px;
+}
+.upi-details label{
+    font-size: 10px;
+    line-height: 20px;
+}
+
+.card-num-field-group{
+    margin-top: 10px;
+}
+
+.date-field-group{
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.cvc-field-group{
+    margin-top: 10px;
+    display: inline-block;
+
+    margin-left: 20px;
+}
+
+
+.name-field-group{
+    margin-top: 10px;
+}
+
+.card-num-field, .name-field{
+    width: 260px;
+
+}
+
+.date-field, .cvc-field{
+    width: 70px;
+}
+
+.card-details input{
+    border: 1px solid #ccc;
+    height: 22px;
+    padding: 5px;
+    font-size: 10px;
+}
+
+.card-details input::placeholder{
+    color: #ccc;
+}
+.upi-details input::placeholder{
+    color: #ccc;
+}
+
+
+
+.pay-btn{
+    margin: 0px 120px;
+    width: 270px;
+    color: #fff;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 30px;
+    background-color:mediumpurple;
+    cursor: pointer;
+    text-align: center;
+}

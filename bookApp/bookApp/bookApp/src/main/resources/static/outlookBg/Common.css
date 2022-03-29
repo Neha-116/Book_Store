@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=BenchNine:wght@300&family=Licorice&family=Open+Sans+Condensed:wght@300&family=Pushster&family=Rock+3D&display=swap');
+
+#Ab{
+    font-family: 'Open Sans Condensed',sans-serif;
+    text-align: center;
+    font-size: 37px;
+    font-weight: 700;
+    color: white;
+    background-color:rgb(124, 116, 133);
+}
+#Tz{
+  font-family: 'Open Sans Condensed',sans-serif;
+  text-align: center;
+  font-size: 37px;
+  font-weight: 700;
+  color: white;
+  background-color:rgb(124, 116, 133);
+}
+#Ez{
+  font-family: 'Open Sans Condensed',sans-serif;
+  text-align: center;
+  font-size: 37px;
+  font-weight: 700;
+  color: white;
+  background-color:rgb(124, 116, 133);
+}
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+
+    
+

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="LandingPage/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></head>
+<body>
+
+<header>
+    <div class="header-1">
+        <h3 class="logo" align="center"><i class="fa fa-book"></i>Book Store</h3>
+    </div>
+
+    <div class="header-2">
+
+        <div id="menu-bar" class="fas fa-bars"></div>
+
+        <nav class="navbar">
+            <marquee width="1000px" direction="right" height="20px">
+                <h4 style="color: white"><p><i class="fa fa-book"></i>Welcome to Book Store</p></h4>
+            </marquee>
+        </nav>
+
+    </div>
+
+</header>
+
+<section class="category" id="category">
+    <div class="box-container">
+
+        <div class="box">
+            <a th:href="@{'/home'}" class="zoom dot hover" style="margin-right:0px;"><img width="138px" height="150px" src="LandingPage/home1.png"></a>
+
+        </div>
+
+        <div class="box">
+            <a th:href="@{'/loginPage'}" class="zoom1 dot1 hover" style="margin-left:-150px;"><img width="138px" height="150px" src="LandingPage/user1.png"></a>
+
+        </div>
+
+    </div>
+</section>
+
+<section class="footer" id="contact">
+
+    <div class="box-container ">
+
+        <div class="box">
+            <br>
+            <h3 class="box text-center text-white">contact us </h3>
+            <p>Global Village,Bengaluru,Karnataka 560100</p>
+
+            <div class="share">
+
+                <a  href="https://www.facebook.com/" class="btn btn-primary fab fa-facebook-f"></a>
+
+
+                <a  href="https://twitter.com/" class="btn btn-primary fab fa-twitter"></a>
+
+
+                <a  href="https://www.instagram.com/" class="btn btn-primary fab fa-instagram"></a>
+
+
+                <a  href="https://www.linkedin.com/" class="btn btn-primary fab fa-linkedin"></a>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+</body>
+</html>

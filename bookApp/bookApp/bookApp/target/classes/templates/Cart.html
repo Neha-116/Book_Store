@@ -1,0 +1,258 @@
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <title>Cart</title>
+    <link rel="stylesheet" href="Cart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script th:inline="javascript">
+    var totalPrice=0;
+</script>
+</head>
+<body>
+<section>
+    <div class="cover">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 d-flex align-items-center">
+                    <p class="mb-0 phone pl-md-2">
+                        <a href="#"class="mr-2">
+                            <i class="fas fa-phone mr-1"></i>
+                                    99999          </a>
+                        <a href="#"><i class="fas fa-paper-plane mr-1"></i>
+                            mail.com
+                        </a>
+                    </p>
+                </div>
+                <div class="col-md-6 d-flex justify-content-md-end">
+                    <div class="social-icon mr-4">
+
+                    </div>
+                    <div class="reg">
+                        <a th:href="@{'/loginPage'}">Log Out</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-lg main-navbar bg-color main-navbar-color"
+         id="main-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="#">Book It Now</a>
+            <div class="order-lg-last btn-group">
+                <i class="fas fa-shopping-bag fa-2x"></i>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#myNav" aria-controls="nav" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i></button>
+            <div class="collapse navbar-collapse" id="myNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a th:href="@{'/home'}" class="nav-link">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a th:href="@{'/userBooksTable'}" class="nav-link">Books</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Order It Now</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</section>
+<section id="hero">
+    <div class="hero-container">
+        <div class="hero-logo">
+            <h1 class="font-weight-bold">Cart Products</h1>
+        </div>
+    </div>
+</section>
+<section class="mt-0.2">
+    <div class="container">
+        <div class="cart">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th scope="col"class="text-white">Product</th>
+                        <th scope="col"class="text-white">Price</th>
+                        <th scope="col"class="text-white">Quantity</th>
+                        <th scope="col"class="text-white">Total</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <th:block th:each="ListCart: ${ListCart}">
+                    <tr>
+                        <td>
+                            <div class="main">
+                                <div class="d-flex">
+                                     <img src="cart1.jpg" alt="">
+                                </div>
+                                <div class="des">
+                                    <h6>[[${ListCart.bookName}]]</h6>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <h6>[[${ListCart.price}]] </h6>
+                        </td>
+                        <td>
+                            <h6>[[${ListCart.totalNumberOfBooks}]] </h6>
+                        </td>
+                        <td>
+                            <h6 th:id="totalPrice+${ListCart.price}" th:text="${ListCart.totalNumberOfBooks}*${ListCart.price}"></h6>
+                        </td>
+                        <script th:inline="javascript">
+                            totalPrice+=Number(document.getElementById("totalPrice"+[[${ListCart.price}]]).innerText);
+                            console.log(totalPrice)
+                        </script>
+<!--                        <td id="subTotal"></td>-->
+
+<!--                        <td>-->
+<!--                            <label for="Quantity">Quantity</label>-->
+
+<!--                            <select name="Quantity" id="Quantity">-->
+<!--                                <option><a th:value="'1'+${ListCart.bookCode}" th:href="@{'/quantity'}">1</a></option>-->
+<!--                                <option><a th:value="'2'+${ListCart.bookCode}" th:href="@{'/quantity'}">2</a></option>-->
+<!--                                <option><a th:value="'3'+${ListCart.bookCode}" th:href="@{'/quantity'}">3</a></option>-->
+<!--                                <option><a th:value="'4'+${ListCart.bookCode}" th:href="@{'/quantity'}">4</a></option>-->
+<!--                            </select>-->
+
+<!--                        </td>-->
+<!--                        <td>-->
+
+<!--                                <button  th:onclick="increment(${ListCart.bookCode}),totalPrice(${ListCart.bookCode})">+</button>-->
+
+<!--                            <span th:id="'demoInput'+${ListCart.bookCode}">0</span>-->
+
+<!--                                <button th:onclick="decrement(${ListCart.bookCode}),totalPrice(${ListCart.bookCode})"> - </button>-->
+
+<!--                        </td>-->
+<!--                        <td>-->
+<!--                            <h6 th:id="'totalPrice'+${ListCart.bookCode}"> </h6>-->
+<!--                        </td>-->
+<!--                    </tr>-->
+<!--                        <script th:inline="javascript">-->
+
+<!--                          console.log([[${ListCart.bookCode}]]);-->
+
+<!--                            function increment(v) {-->
+<!--                                console.log(v);-->
+<!--                                const currentValue = Number(document.getElementById('demoInput'+v).innerText);-->
+<!--                                const newValue = currentValue + 1;-->
+<!--                                if (checkLimit(newValue)) {-->
+<!--                                    document.getElementById('demoInput'+v).innerText = newValue;-->
+<!--                                }-->
+<!--                            }-->
+
+<!--                            function decrement(v) {-->
+<!--                                const currentValue = Number(document.getElementById('demoInput'+v).innerText);-->
+<!--                                const newValue = currentValue - 1;-->
+<!--                                if (checkLimit(newValue)) {-->
+<!--                                    document.getElementById('demoInput'+v).innerText = newValue;-->
+
+<!--                                }-->
+<!--                            }-->
+
+<!--                            function checkLimit(value) {-->
+<!--                                return (0 <= value && value <= 10);-->
+<!--                            }-->
+<!--                            function totalPrice(v){-->
+<!--                                const numberOfBooks = Number(document.getElementById('demoInput'+v).innerText);-->
+<!--                                const price = Number(document.getElementById('price'+v).innerText);-->
+<!--                                document.getElementById('totalPrice'+v).innerText=numberOfBooks * price;-->
+<!--                            }-->
+<!--                        </script>-->
+
+                    </th:block>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="col-lg-4 offset-lg-4">
+    <div class="checkout">
+        <ul>
+            <li class="subtotal">subtotal
+                <span id="subTotal"> </span>
+                <h6 style="font-size: x-small" align="right">18% GST<br>-10% discount</h6>
+            </li>
+            <li class="cart-total">Total
+                <span id="total"> </span></li>
+        </ul>
+        <a th:href="@{'/payment'}" class="proceed-btn">Proceed to Checkout</a>
+    </div>
+</div>
+<script th:inline="javascript">
+    console.log("out side loop")
+    console.log(totalPrice)
+    document.getElementById("subTotal").innerText=totalPrice;
+    document.getElementById("total").innerText=(Math.round((totalPrice*1.18)*0.9))
+
+</script>
+</body>
+
+</html>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+
+
+<!--                    <tr>-->
+<!--                        <td>-->
+<!--                            <div class="main">-->
+<!--                                <div class="d-flex">-->
+<!--                                    <img src="images/cart-1.jpg" alt="">-->
+<!--                                </div>-->
+<!--                                <div class="des">-->
+<!--                                    <p> </p>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </td>-->
+<!--                        <td>-->
+<!--                            <h6> </h6>-->
+<!--                        </td>-->
+<!--                        <td>-->
+<!--                            <div class="counter">-->
+<!--                                <i class="fas fa-angle-down"></i>-->
+<!--                                <input class="input-number" type="text"-->
+<!--                                       value="1" min="0" max="10">-->
+<!--                                <i class="fas fa-angle-up"></i>-->
+<!--                            </div>-->
+<!--                        </td>-->
+<!--                        <td>-->
+<!--                            <h6> </h6>-->
+<!--                        </td>-->
+<!--                    </tr>-->
+<!--                    <tr>-->
+<!--                        <td>-->
+<!--                            <div class="main">-->
+<!--                                <div class="d-flex">-->
+<!--                                    <img src="images/cart-1.jpg"alt="">-->
+<!--                                </div>-->
+<!--                                <div class="des">-->
+<!--                                    <p> </p>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </td>-->
+<!--                        <td>-->
+<!--                            <h6> </h6>-->
+<!--                        </td>-->
+<!--                        <td>-->
+<!--                            <div class="counter">-->
+<!--                                <i class="fas fa-angle-down"></i>-->
+<!--                                <input class="input-number"type="text"-->
+<!--                                       value="1"min="0"max="10">-->
+<!--                                <i class="fas fa-angle-up"></i>-->
+<!--                            </div>-->
+<!--                        </td>-->
+<!--                        <td>-->
+<!--                            <h6> </h6>-->
+<!--                        </td>-->
+<!--                    </tr>-->

@@ -1,0 +1,13 @@
+
+body {
+  background-image: url("lap.jpg");
+  background-repeat: no-repeat;
+    background-size: 1280px 580px;
+
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}#p1, #p2, #p3
+{
+  color: #FF0000;
+}
